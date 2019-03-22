@@ -25,12 +25,11 @@ defmodule Hangman.Game do
     Map.put(game, :game_state, :already_used)
   end
 
-  def accept_move(game, guess, _already_guessed) do
+  def accept_move(game, guess, _already_guessed = false) do
     Map.put(game, :used, MapSet.put(game.used, guess))
   end
 
   def tally(game) do
     123
   end
-
 end
